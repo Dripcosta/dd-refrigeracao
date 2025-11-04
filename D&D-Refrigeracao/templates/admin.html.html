@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Painel Administrativo</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Editar Textos do Site</h2>
+            <form method="POST" action="/editar-texto">
+                <textarea name="novo_texto" rows="5" cols="50" placeholder="Digite o novo texto..."></textarea><br><br>
+                <button type="submit">Salvar Texto</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Alterar Cores</h2>
+            <form method="POST" action="/editar-cor">
+                <label>Cor de fundo:</label>
+                <input type="color" name="cor_fundo"><br><br>
+                <label>Cor do botão:</label>
+                <input type="color" name="cor_botao"><br><br>
+                <button type="submit">Salvar Cores</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Enviar Foto ou Vídeo</h2>
+            <form method="POST" action="/upload" enctype="multipart/form-data">
+                <input type="file" name="arquivo"><br><br>
+                <button type="submit">Enviar Arquivo</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Gerenciar Agendamentos</h2>
+            <a href="/agendamento">Ver agendamentos</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Área exclusiva do administrador</p>
+    </footer>
+</body>
+</html>

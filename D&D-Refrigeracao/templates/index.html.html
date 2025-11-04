@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>D&D Refrigeração</title>
+</head>
+<body>
+    <h1>Bem-vindo à D&D Refrigeração</h1>
+
+    <section>
+        <h2>Login do Administrador</h2>
+        <form method="post" action="/login">
+            <input type="text" name="usuario" placeholder="Usuário"><br>
+            <input type="password" name="senha" placeholder="Senha"><br>
+            <button type="submit">Entrar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Agendamento</h2>
+        <form method="post" action="/agendar">
+            <input type="text" name="nome" placeholder="Seu nome"><br>
+            <input type="date" name="data"><br>
+            <input type="text" name="servico" placeholder="Serviço desejado"><br>
+            <button type="submit">Agendar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Painel Administrativo</h2>
+        <table border="1">
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Serviço</th>
+            </tr>
+            {% for agendamento in agendamentos %}
+            <tr>
+                <td>{{ agendamento[1] }}</td>
+                <td>{{ agendamento[2] }}</td>
+                <td>{{ agendamento[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>
